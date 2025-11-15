@@ -2499,3 +2499,72 @@ li.archive-entry .search-highlight {
     width: 90%;
   }
 }
+
+/* === Slutgiltig, stabil och korrekt "Gilla" / "Gillad" knapp === */
+
+/* Basstil */
+.posthaven-upvote-label,
+.posthaven-upvoted-label {
+  font-size: 0 !important;
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+  transition: none !important;
+  vertical-align: middle !important;
+}
+
+/* F������������������re klick (visa Gilla) */
+.posthaven-upvote-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.posthaven-upvote-label::before {
+  content: "Gilla";
+  font-size: 15px !important;
+  font-weight: bold;
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* Efter klick (visa Gillad, d������������������lj Gilla) */
+.posthaven-upvoted .posthaven-upvote-label {
+  display: none !important;
+}
+.posthaven-upvoted .posthaven-upvoted-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.posthaven-upvoted .posthaven-upvoted-label::before {
+  content: "Gillad";
+  font-size: 15px !important;
+  font-weight: bold;
+  color: inherit;
+  vertical-align: middle;
+}
+
+/* R������������������knesiffra och centreringsfix */
+.posthaven-upvote-number {
+  line-height: 1 !important;
+  vertical-align: middle !important;
+}
+
+.posthaven-upvote,
+.posthaven-upvoted {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  vertical-align: middle !important;
+  transition: none !important;
+}
+
+/* D������lj Posthaven login/user ikon */
+.ph-user-menu,
+.ph-trigger,
+.navigation .user-menu,
+.user-menu {
+  display: none !important;
+  visibility: hidden !important;
+}

@@ -1,32 +1,111 @@
 ---
 archive:
-  back_to_all_dates: Back to All Dates
-  no_results: No results found.
-  previous_page: Previous
-  next_page: Next
-
+  back_to_all_dates: Tillbaka till alla datum
+  no_results: Inga resultat hittades.
+  previous_page: Föregående
+  next_page: Nästa
+date:
+  AM: FM
+  PM: EM
+  am: fm
+  pm: em
+  days:
+  - Söndag
+  - Måndag
+  - Tisdag
+  - Onsdag
+  - Torsdag
+  - Fredag
+  - Lördag
+  months:
+  - Januari
+  - Februari
+  - Mars
+  - April
+  - Maj
+  - Juni
+  - Juli
+  - Augusti
+  - September
+  - Oktober
+  - November
+  - December
+  short_days:
+  - Sön
+  - Mån
+  - Tis
+  - Ons
+  - Tors
+  - Fre
+  - Lör
+  short_months:
+  - Jan
+  - Feb
+  - Mar
+  - Apr
+  - Maj
+  - Jun
+  - Jul
+  - Aug
+  - Sep
+  - Okt
+  - Nov
+  - Dec
 forms:
+  archive:
+    query_placeholder: Sök på sidan...
   comment:
-    name_placeholder: Name
-    email_placeholder: Email
-    url_placeholder: URL
-    comment_placeholder: Your comment...
-
+    anon_error: Ange ditt namn och din e-postadress.
+    comment_button: Kommentera
+    comment_label: Din kommentar
+    name_label: Ditt namn
+    email_label: E-postadress
+    notify_label: Meddela mig via e-post när nya kommentarer publiceras
+    url_label: URL
+    url_prompt: Lägg till webbadress
+  private:
+    submit_button: OK
   subscribe:
-    follow_link: Subscribe
-    prompt: |
-      <h3>Subscribe by email</h3>
-      <p>Get email alerts about new posts. Unsubscribe anytime.</p>
-    unfollow_link: <strong>Unsubscribe</strong>
+    after_follow_notice: Du följer nu den här bloggen.
+    after_subscribe_notice: Du är nu prenumerant. Kontrollera din e-post för att bekräfta
+      prenumerationen.
+    after_unfollow_notice: Du har slutat följa bloggen.
+    email_placeholder: E-postadress
+    follow_link: Följ denna blogg
+    following_notice: Du följer redan den här bloggen.
     instructions: |
-      <h3>Subscribe by email</h3>
-      <p>Get email alerts about new posts. Unsubscribe anytime.</p>
-
-read_more: Read more
-
+      Ange din e-postadress för att få uppdateringar när nya inlägg publiceras.
+      Du kan avsluta prenumerationen när som helst.
+    invalid_email: Ogiltig e-postadress.
+    prompt: Prenumerera via e-post
+    submit_button: Prenumerera
+    unfollow_link: Sluta följa
+gallery:
+  of: av
 pagination:
-  first: First
-  previous: Previous
-  gap: …
-  next: Next
-  last: Last
+  first: Första
+  previous: Föregående
+  gap: "…"
+  next: Nästa
+  last: Sista
+read_more: Läs mer
+relative_date:
+  now: just nu
+  moment: om ett ögonblick
+  one_minute: en minut
+  minutes: minuter
+  oneHour: en timme
+  hours: timmar
+  yesterday: igår
+  tomorrow: imorgon
+  days: dagar
+  one_week: en vecka
+  weeks: veckor
+  one_month: en månad
+  months: månader
+  one_year: ett år
+  years: år
+  pastPrefix: 
+  pastSuffix: sedan
+  futurePrefix: 
+  futureSuffix: från nu

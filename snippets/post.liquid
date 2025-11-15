@@ -1,84 +1,40 @@
-{% if post %}
-  <header>
-    <div class="post-title">
-    
-      {% if post.post_image %}
-        {% if post.url.current_page? %}
-          <figure>
-            <img src="{{ post.post_image.large.url }}" />
-          </figure>
-        {% else %}
-          <figure>
-            <a href="{{ post.url }}">
-              <img src="{{ post.post_image.large.url }}" />
-            </a>
-          </figure>
-        {% endif %}
+<div class="meta">
+  Publicerad
+  <time>
+    <a href="{{ post.url }}">{{ post.published_at | relative_date }}</a>
+    den {{ post.published_at 
+      | local_date: "%-d %B %Y"
+      | replace: "January", "januari" 
+      | replace: "February", "februari"
+      | replace: "March", "mars"
+      | replace: "April", "april"
+      | replace: "May", "maj"
+      | replace: "June", "juni"
+      | replace: "July", "juli"
+      | replace: "August", "augusti"
+      | replace: "September", "september"
+      | replace: "October", "oktober"
+      | replace: "November", "november"
+      | replace: "December", "december"
+      | downcase }}
+    kl. {{ post.published_at | local_date: "%H:%M" }}
+  </time>
+
+  {% if request.template == 'post' and post.show_byline? %}
+    <span class="author">
+      av
+      {% if post.author.url %}
+        <a href="{{ post.author.url }}">{{ post.author.name }}</a>
+      {% else %}
+        {{ post.author.name }}
       {% endif %}
-      
-      <h2>
-        {% if post.private? %}
-          <span class="private-indicator" title="This post is private. Only you and people you've sent the link to have access to this post.">
-            <svg>
-              <use xlink:href="#icon-lock"></use>
-            </svg>
-          </span>
-        {% endif %}
+    </span>
+  {% endif %}
 
-        <a href="{{ post.url }}">{{ post.title }}</a>
-      </h2>
-
-      {% if show_aside %}
-        <aside>
-          <section>
-            <div class="meta">
-              Posted
-              <time>
-                <a href="{{ post.url }}">{{ post.published_at | relative_date }}</a>
-                on {{ post.published_at | local_date: "%B %e, %Y" }} at {{ post.published_at | local_date: "%l:%M %p" }}
-              </time>
-              {% if request.template == 'post' and post.show_byline? %}
-                <span class="author">
-                  by
-                  {% if post.author.url %}
-                    <a href="{{ post.author.url }}">{{ post.author.name }}</a>
-                  {% else %}
-                    {{ post.author.name }}
-                  {% endif %}
-                </span>
-              {% endif %}
-              <span class="stat">
-                &bullet; {{ post | view_count }}
-              </span>
-              <span class="measure">
-                views
-              </span>
-            </div>
-          </section>
-
-          {% if post.tags.size > 0 %}
-            <section>
-              <div class="tags">
-                <ul>
-                  {% for post_tag in post.tags %}
-                    <li>
-                      <a href="{{ post_tag.url }}">{{ post_tag.name }}</a>
-                    </li>
-                  {% endfor %}
-                </ul>
-              </div>
-            </section>
-          {% endif %}
-        </aside>
-      {% endif %}
-    </div>
-  </header>
-
-  <div class="post-body" id="post_body_{{ post.id }}">
-    {% if post.url.current_page? %}
-      {{ post.body_large_image }}
-    {% else %}
-      {{ post.excerpt_or_body_large_image }}
-    {% endif %}
-  </div>
-{% endif %}
+  <span class="stat">
+    &bullet; {{ post | view_count }}
+  </span>
+  <span class="measure">
+    visningar
+  </span>
+</div>
